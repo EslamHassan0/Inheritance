@@ -3,14 +3,23 @@
     public class Employee
     {
 
-        public const int MinimumLoggedHours = 175;
-        public const decimal OverTimeRate = 1.50m;
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public decimal LoggedHours { get; set; }
-        public decimal Wage { get; set; }
-    
-        public virtual decimal Calculate()
+        private const int MinimumLoggedHours = 175;
+        private const decimal OverTimeRate = 1.50m;
+
+        public Employee(int id, string name, decimal loggedHours, decimal wage)
+        {
+            Id = id;
+            Name = name;
+            LoggedHours = loggedHours;
+            Wage = wage;
+        }
+
+        protected int Id { get; set; }
+        protected string Name { get; set; }
+        protected decimal LoggedHours { get; set; }
+        protected decimal Wage { get; set; }
+
+        protected virtual decimal Calculate()
         {
             
             return CalculateBaseSalary() + CalculateOverTime();

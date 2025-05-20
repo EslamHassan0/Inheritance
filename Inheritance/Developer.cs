@@ -8,10 +8,15 @@ namespace Inheritance
 {
     public class Developer : Employee
     {
-        public const decimal Commission = 0.03m;
-        public bool TaskCompleted { get; set; }
-       
-        public override decimal Calculate()
+        private const decimal Commission = 0.03m;
+        protected bool TaskCompleted { get; set; }
+
+        public Developer(int id, string name, decimal loggedHours, 
+            decimal wage , bool taskCompleted) : base(id, name, loggedHours, wage)
+        {
+            this.TaskCompleted = taskCompleted;
+        }
+        protected override decimal Calculate()
         {
             return base.Calculate() + CalculateBonus();
         }

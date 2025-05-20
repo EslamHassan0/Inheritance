@@ -9,7 +9,13 @@ namespace Inheritance;
 public  class Maintenance : Employee
 {
     private const decimal HardShip = 100m;
-    public override decimal Calculate()
+
+    public Maintenance(int id, string name, decimal loggedHours,
+           decimal wage  ) : base(id, name, loggedHours, wage)
+    {
+     
+    }
+    protected override decimal Calculate()
     {
         return base.Calculate() + HardShip;
     }

@@ -5,37 +5,13 @@
         static void Main(string[] args)
         {
 
-            Manager manager = new Manager 
-            {
-                Id = 100,
-                Name = "Eslam",
-                LoggedHours =180,
-                Wage = 10,
-            };
-            Maintenance ms = new Maintenance
-            {
-                Id = 1002,
-                Name = "Salem",
-                LoggedHours = 182,
-                Wage = 8,
-            };
-            Sales sa = new Sales
-            {
-                Id = 1003,
-                Name = "Khalid",
-                LoggedHours = 185,
-                Commission = 0.05m,
-                SalesVolume = 10000m,
-                Wage = 6,
-            };
-            Developer de = new Developer
-            {
-                Id = 1001,
-                Name = "Eslam",
-                TaskCompleted = true,
-                LoggedHours = 186,
-                Wage = 15,
-            };
+            Manager manager = new Manager (100 , "Eslam", 180, 10);
+            Maintenance ms = new Maintenance(1002, "Salem", 182, 8);
+
+            Sales sa = new Sales(1003, "Khalid", 185, 6, 10000m, 0.05m);
+
+            Developer de = new Developer(1001, "Eslam", 186, 15, true);
+             
 
 
             Employee[] employees = { manager, ms, sa , de };

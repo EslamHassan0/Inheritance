@@ -9,9 +9,15 @@ namespace Inheritance
     public class Sales : Employee
     {
 
-        public   decimal SalesVolume { get; set; }
-        public   decimal Commission { get; set; }
-        public override decimal Calculate()
+        protected decimal SalesVolume     { get; set; }
+        protected decimal Commission    { get; set; }
+        public Sales(int id, string name, decimal loggedHours,
+            decimal wage, decimal salesVolume, decimal commission) : base(id, name, loggedHours, wage)
+        {                 
+            this.SalesVolume = salesVolume;
+            this.Commission = commission;
+        }
+        protected override decimal Calculate()
         {
             return base.Calculate() + CalculateBonus();
         }

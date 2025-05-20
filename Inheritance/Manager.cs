@@ -10,7 +10,12 @@ namespace Inheritance
     {
 
         private const decimal AllowanceRate = 0.05m;
-        public override decimal Calculate()
+
+        public Manager(int id, string name, decimal loggedHours, decimal wage) : base (id,  name,  loggedHours,  wage)
+        {
+            
+        }
+        protected override decimal Calculate()
         {
             return base.Calculate() + CalculateAllowance();
         }
